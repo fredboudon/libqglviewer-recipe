@@ -21,7 +21,9 @@ requirements:
   build:
     - python
     - qt =5
-    - patch
+    - m2-patch [win]
+    - patch [unix]
+    - {{ compiler('c++') }}
   run:
     - qt =5
     - vs2008_runtime   [win and py27]
