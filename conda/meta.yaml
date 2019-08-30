@@ -23,7 +23,7 @@ requirements:
     - qt =5
     - m2-patch [win]
     - patch [unix]
-    - {{ compiler('c++') }}
+    - {{ compiler('cxx') }}
   run:
     - qt =5
     - vs2008_runtime   [win and py27]
