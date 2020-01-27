@@ -12,23 +12,34 @@ source:
    - libQGLViewer.pro.patch
 
 build:
-  number: 1
-  features:
-    - vc9     [win and py27]
-    - vc14    [win and py37]
+  number: 2
+
 
 requirements:
   build:
-    - python
-    - qt =5
-    - m2-patch [win]
-    - patch [unix]
-    # - {{ compiler('cxx') }}
+      - qt 
+      - m2-patch                           # [win]
+      - patch                              # [unix]
+      - {{ compiler('cxx') }}
+      - make                               # [unix]
+      - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+      - {{ cdt('libx11-devel') }}          # [linux]
+      - {{ cdt('libxext-devel') }}         # [linux]
+      - {{ cdt('libxrender-devel') }}      # [linux]
+      - {{ cdt('mesa-libgl-devel') }}      # [linux]
+      - {{ cdt('mesa-libegl-devel') }}     # [linux]
+      - {{ cdt('mesa-dri-drivers') }}      # [linux]
+      - {{ cdt('libxdamage') }}            # [linux]
+      - {{ cdt('libxdamage-devel') }}      # [linux]
+      - {{ cdt('libxfixes') }}             # [linux]
+      - {{ cdt('libxfixes-devel') }}       # [linux]
+      - {{ cdt('libxxf86vm') }}            # [linux]
+      - {{ cdt('libxxf86vm-devel') }}      # [linux]
+      - {{ cdt('libselinux-devel') }}      # [linux]
   run:
-    - qt =5
-    - vs2008_runtime   [win and py27]
-    - vs2015_runtime   [win and py37]
+    - qt
 
 about:
   home: http://www.libqglviewer.com
   license: GPL
+  summary: libQGLViewer is a C++ library based on Qt that eases the creation of OpenGL 3D viewers.
