@@ -7,20 +7,14 @@ set -x -e
 
 if [ "$(uname)" == "Darwin" ];
 then
-    #export CC=clang
-    #export CXX=clang++
-
-    #export MACOSX_VERSION_MIN=10.9
-    #export QMAKESPEC=macx-clang
-	
-	#CXXFLAGS="${CXXFLAGS} -stdlib=libc++ -mmacosx-version-min=${MACOSX_VERSION_MIN}"
     LDFLAGS="${LDFLAGS} -undefined dynamic_lookup"
 
 fi
 
 if [ "$(uname)" == "Linux" ];
 then
-    export QMAKESPEC=linux-g++
+   export QMAKESPEC=linux-g++
+   LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 fi
 
 [[ -d build ]] || mkdir build
@@ -40,9 +34,9 @@ qmake ../libQGLViewer.pro \
     QMAKE_OBJDUMP=${OBJDUMP} \
     QMAKE_STRIP=${STRIP} \
     QMAKE_AR_CMD="${AR} cqs" \
-    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
-    QMAKE_CFLAGS_RELEASE="${CFLAGS}"
-    QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
+    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+    QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+    QMAKE_LFLAGS_RELEASE="${LDFLAGS}" \
     QT_SYSROOT="${CONDA_BUILD_SYSROOT}" \
     QMAKE_MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET}" \
     
