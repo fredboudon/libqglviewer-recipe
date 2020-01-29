@@ -10,11 +10,11 @@ environment:
 
 
 install:
+  - call CallVCVars.bat
   - git clone https://github.com/OpenAlea/appveyor-ci.git appveyor-ci
   - cd appveyor-ci
   - call install.bat
   - conda config --prepend channels conda-forge
-  - call CallVCVars.bat
 
 before_build:
   - call before_build.bat
