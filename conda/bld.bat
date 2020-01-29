@@ -1,18 +1,7 @@
 mkdir build
 cd build
 
-qmake ../libQGLViewer.pro PREFIX=%LIBRARY_PREFIX% NO_QT_VERSION_SUFFIX=1  \
-    QTC_PREFIX=%LIBRARY_PREFIX%             \
-    QBS_INSTALL_PREFIX=%LIBRARY_PREFIX%     \
-    QMAKE_CC=%CC% \
-    QMAKE_CXX=%CXX% \
-    QMAKE_LINK=%CXX% \
-    QMAKE_RANLIB=%RANLIB% \
-    QMAKE_OBJDUMP=%OBJDUMP% \
-    QMAKE_STRIP=%STRIP% \
-    QMAKE_CXXFLAGS_RELEASE="%CXXFLAGS%" \
-    QMAKE_CFLAGS_RELEASE="%CFLAGS%" \
-    QMAKE_LFLAGS_RELEASE="%LDFLAGS%" 
+qmake ../libQGLViewer.pro PREFIX=%LIBRARY_PREFIX% NO_QT_VERSION_SUFFIX=1 
 
 nmake release
 nmake install
