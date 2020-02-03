@@ -1,5 +1,4 @@
 platform:
-  - x86
   - x64
 
 environment:
@@ -10,7 +9,6 @@ environment:
 
 
 install:
-  - call CallVCVars.bat
   - git clone https://github.com/OpenAlea/appveyor-ci.git appveyor-ci
   - cd appveyor-ci
   - call install.bat

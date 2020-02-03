@@ -1,5 +1,8 @@
+
 mkdir build
 cd build
+
+%VSINSTALLDIR%\VC\Auxiliary\Build\vcvars64.bat
 
 qmake ../libQGLViewer.pro PREFIX=%LIBRARY_PREFIX% NO_QT_VERSION_SUFFIX=1 
 
