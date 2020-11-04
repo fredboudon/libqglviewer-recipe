@@ -1,8 +1,8 @@
 diff --git a/QGLViewer/QGLViewer.pro b/QGLViewer/QGLViewer.pro
-index 82746c2..973cfa1 100644
+index 7aa1f06..749c036 100644
 --- a/QGLViewer/QGLViewer.pro
 +++ b/QGLViewer/QGLViewer.pro
-@@ -212,12 +212,12 @@ unix {
+@@ -212,7 +212,7 @@ unix {
  # -------------------
  macx|darwin-g++ {
  	# Default setting creates a Mac framework. Comment out this line to create a dylib instead.
@@ -11,9 +11,3 @@ index 82746c2..973cfa1 100644
  
  	include.files *= qglviewer.icns
  
-     # Or whatever exists in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
--    QMAKE_MAC_SDK = macosx10.12
-+    #QMAKE_MAC_SDK = macosx10.12
- 
- 	lib_bundle {
- 		FRAMEWORK_HEADERS.version = Versions

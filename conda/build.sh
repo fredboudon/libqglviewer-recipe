@@ -22,7 +22,7 @@ cd build
 
 env
 
-qmake ../libQGLViewer.pro \
+qmake $SRC_DIR/QGLViewer/QGLViewer.pro \
     PREFIX="${PREFIX}"             \
     QTC_PREFIX="${PREFIX}"             \
     QBS_INSTALL_PREFIX="${PREFIX}"     \
@@ -38,8 +38,8 @@ qmake ../libQGLViewer.pro \
     QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
     QMAKE_LFLAGS_RELEASE="${LDFLAGS}" \
     QT_SYSROOT="${CONDA_BUILD_SYSROOT}" \
-    QMAKE_MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET}" \
-    
+    QMAKE_MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET}"
+   
 
 make
 make install

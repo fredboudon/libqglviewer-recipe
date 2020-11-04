@@ -2,7 +2,7 @@
 mkdir build
 cd build
 
-qmake ../libQGLViewer.pro PREFIX=%LIBRARY_PREFIX% NO_QT_VERSION_SUFFIX=1 
+qmake %SRC_DIR%/QGLViewer/QGLViewer.pro PREFIX=%LIBRARY_PREFIX% NO_QT_VERSION_SUFFIX=1 
 if errorlevel 1 exit 1
 
 nmake release
