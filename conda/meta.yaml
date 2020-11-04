@@ -22,7 +22,7 @@ requirements:
       - {{ compiler('cxx') }}
       - make                               # [unix]
   host:
-      - qt 
+      - qt >=5.12
       - {{ cdt('mesa-libgl-devel') }}      # [linux]
       - {{ cdt('mesa-dri-drivers') }}      # [linux]
       - {{ cdt('libselinux') }}            # [linux]
@@ -30,8 +30,8 @@ requirements:
       - {{ cdt('libxxf86vm') }}            # [linux]
       - libglu                             # [linux]
   run:
-      - qt
-      - xorg-libxfixes  # [linux]
+      - {{ pin_compatible('qt',       max_pin='x.x') }} 
+      - xorg-libxfixes                     # [linux]
       - libglu                             # [linux]
 about:
   home: http://www.libqglviewer.com
